@@ -6,10 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^5.1.0",
+    "cloudinary": "^1.26.3",
+    "firebase": "^8.6.5",
+    "font-awesome": "^4.7.0",
     "mongodb": "^3.5.9",
-    "next": "latest",
+    "next": "^11.1.0",
+    "next-connect": "^0.10.2",
+    "open-graph-scraper": "^4.9.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "reactstrap": "^8.9.0"
   },
   "license": "MIT"
 }

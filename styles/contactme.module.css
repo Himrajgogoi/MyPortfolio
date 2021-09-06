@@ -1,0 +1,42 @@
+.contents{
+
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: 10em;
+   margin-bottom: 10em;
+} 
+
+.links{
+    color: aliceblue;
+    font-size:1em;
+}
+
+@media screen and (min-width: 900px) {
+
+    .contents{
+
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        margin-top: 10em;
+        margin-bottom: 15em;
+        margin-left: 5em;
+    }
+
+    
+    .links{
+       color: aliceblue;
+       font-size: 2em;
+    }
+
+}
+
+    
+

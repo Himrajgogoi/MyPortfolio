@@ -1,0 +1,25 @@
+.footer_content{
+    color: white;
+    padding: 3vh 3vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer_container{
+    margin-top: 4vh;
+    position: relative;
+    width: 100vw;
+    max-height: fit-content;
+    opacity: 0.8;
+    background-color: black;
+}
+
+.copyright{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 3vh 2vw;
+    color: white;
+}

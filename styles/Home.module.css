@@ -1,0 +1,114 @@
+.contents{
+    position: relative;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+}
+
+.scrolled_content{
+    position: relative;
+    padding: 1vh 2vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.scrolled_content_item{
+    text-align: center;
+    min-width: 30vw;
+    min-height: 18vh;
+    margin: 2vh 2vw;
+    padding: 4vh 6vw;
+    flex: 1 0 33%;
+}
+.scrolled_content_item:hover{
+    transform: scale(1.06);
+    transition: 300ms ease-in-out;
+}
+
+.cards{
+    min-width: 30vw;
+    min-height: 18vh;
+}
+
+
+.card_content{
+    opacity: 0;
+    padding: 0 2vw;
+    display: flex;
+    text-overflow: clip;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: black;
+    color: white;
+}
+.card_content:hover{
+    opacity: 0.8;
+}
+
+
+.titles{
+    position: relative;
+    margin-top: 30vh;
+    padding: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience{
+    color: white;
+    font-size: 10pt;
+}
+
+
+@media screen and (min-width: 900px) {
+    .contents{
+        position: relative;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20em;
+    }
+    
+
+    .scrolled_content_item{
+        text-align: center;
+        min-width: 6vw;
+        min-height: 28vh;
+        max-width: 25vw;
+        margin: 2vh 1vw;
+        flex: 1 0 25%;
+    }
+    .titles{
+        position: relative;
+        margin-top: 45vh;
+        padding: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards{
+        min-width: 25vw;
+        min-height: 28vh;
+    }
+
+    .experience{
+        color: white;
+        font-size: 15pt;
+    }
+    
+    
+}
