@@ -83,7 +83,7 @@ function aboutme({isConnected, aboutme}) {
                     <h2 className="animate fadeInLeft left">About Me.</h2>
                    <div className="row">
                        <div className="col-12 col-md-4">
-                           <h4  className="animate fadeInDown down"><b>Myself, Himraj Gogoi.</b></h4>
+                           <h4  className="animate fadeInDown down"><b>I am, Himraj Gogoi.</b></h4>
                        </div>
                        <div className="col-12 col-md-5 offset-md-1">
                            <p style={{fontFamily: `'Hind Madurai', sans-serif`, color:'white'}}>{aboutme.description}</p>

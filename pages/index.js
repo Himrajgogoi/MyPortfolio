@@ -293,7 +293,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
          <Header/>
           <div className={`container ${styles.contents}`}>
               <div>
-                <h2 className="animate fadeInLeft left">Myself, Himraj Gogoi.</h2>
+                <h2 className="animate fadeInLeft left">I am, Himraj Gogoi.</h2>
                 <h4 className="animate fadeInRight right">Web Developer, Mobile App Developer and a programming enthusiast.</h4>
                 <h5 className="animate fadeInDown down" style={{color: `#ffde59`}}>Scroll below.</h5>
               </div>
