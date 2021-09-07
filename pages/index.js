@@ -287,7 +287,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
     return (
       <>
          <Head>
-          <title>My Portfolio | Home</title>
+          <title>Himraj Gogoi | Home</title>
         </Head>
         <div>
          <Header/>
@@ -464,7 +464,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
     return(
       <>
          <Head>
-          <title>My Portfolio | Home</title>
+          <title>Himraj Gogoi | Home</title>
         </Head>
         <div className={`container ${styles.contents}`}>
                <p>

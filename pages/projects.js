@@ -93,7 +93,7 @@ function projects({isConnected, projects}) {
         return(
             <>
              <Head>
-                 <title>My Portfolio | Projects</title>
+                 <title>Himraj Gogoi | Projects</title>
              </Head>
              <div>
                  <Header/>
@@ -150,7 +150,7 @@ function projects({isConnected, projects}) {
         return(
             <>
                <Head>
-                <title>My Portfolio | Home</title>
+                <title>Himraj Gogoi | Home</title>
               </Head>
               <div className={`container ${styles.contents}`}>
                     <p>

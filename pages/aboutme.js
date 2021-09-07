@@ -55,7 +55,7 @@ function aboutme({isConnected, aboutme}) {
        return(
            <>
             <Head>
-                <title>My Portfolio | About me</title>
+                <title>Himraj Gogoi | About me</title>
             </Head>
             <div>
                 <Header/>
@@ -99,7 +99,7 @@ function aboutme({isConnected, aboutme}) {
     return(
         <>
            <Head>
-            <title>My Portfolio | Home</title>
+            <title>Himraj Gogoi | Home</title>
           </Head>
           <div className={`container ${styles.contents}`}>
                 <p>

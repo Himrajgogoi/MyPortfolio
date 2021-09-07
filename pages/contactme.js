@@ -8,7 +8,7 @@ function contactme({resume}) {
     return (
         <div>
             <Head>
-                <title>My Portfolio | Contact me</title>
+                <title>Himraj Gogoi | Contact me</title>
             </Head>
             <div>
                 <Header/>
