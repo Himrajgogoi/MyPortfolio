@@ -1,4 +1,9 @@
-module.exports = {
+const withPWA = require('next-pwa');
+
+module.exports = withPWA({
+    pwa:{
+        dest:'public'
+    },
     env:{
         API_KEY: process.env.API_KEY,
         AUTH_DOMAIN :process.env.AUTH_DOMAIN,
@@ -7,4 +12,4 @@ module.exports = {
         MESSAGING_SENDER_ID : process.env.MESSAGING_SENDER_ID,
         APP_ID : process.env.APP_ID,
     }
-}
+})
