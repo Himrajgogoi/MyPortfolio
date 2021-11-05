@@ -19,12 +19,12 @@ handler.patch(async (req,res)=>{
         if(req.body.public_id){
             await cloudinary.uploader.destroy(req.body.public_id);
         }
-        await db.collection('Frameworks').updateOne({_id: ObjectId(req.body.id)},{$set:{framework:req.body.framework,experience: req.body.experience, public_id: public_id,...(image &&{image})}})
+        db.collection('Frameworks').updateOne({_id: ObjectId(req.body.id)},{$set:{framework:req.body.framework,experience: req.body.experience, public_id: public_id,...(image &&{image})}})
         .then(data=>res.json(data))
         .catch(error=> res.json(error));
     }
     else{
-        await db.collection('Frameworks').updateOne({_id: ObjectId(req.body.id)},{$set:{framework:req.body.framework,experience: req.body.experience}})
+         db.collection('Frameworks').updateOne({_id: ObjectId(req.body.id)},{$set:{framework:req.body.framework,experience: req.body.experience}})
         .then(data=>res.json(data))
         .catch(error=> res.json(error.message));
     }
@@ -38,13 +38,13 @@ handler.post(async (req,res)=>{
         const image = img.secure_url;
         const public_id = img.public_id;
 
-        await db.collection('Frameworks').insertOne({framework: req.body.framework,experience: req.body.experience, image: image, public_id: public_id})
+         db.collection('Frameworks').insertOne({framework: req.body.framework,experience: req.body.experience, image: image, public_id: public_id})
         .then(data=>res.json(data))
         .catch(error=> res.json(error.message));
     }
 
     else{
-        await db.collection('Frameworks').insertOne({framework: req.body.framework,experience: req.body.experience, public_id:null})
+         db.collection('Frameworks').insertOne({framework: req.body.framework,experience: req.body.experience, public_id:null})
         .then(data=>res.json(data))
         .catch(error=> res.json(error.message));
     }
@@ -58,7 +58,7 @@ handler.delete(async (req,res)=>{
         await cloudinary.uploader.destroy(req.body.image);
     }
 
-    await db.collection('Frameworks').deleteOne({_id: ObjectId(req.body.id)})
+     db.collection('Frameworks').deleteOne({_id: ObjectId(req.body.id)})
     .then((resp)=>res.json(resp))
     .catch((err)=>res.json(err.message));
 })

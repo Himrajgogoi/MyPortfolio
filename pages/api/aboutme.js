@@ -17,13 +17,13 @@ handler.put(async (req,res)=>{
         if(req.body.public_id){
             await cloudinary.uploader.destroy(req.body.public_id);
         }
-        await db.collection('AboutMe').updateOne({_id: ObjectId(req.body.id)},{$set:{description:req.body.description, public_id: public_id,...(resume && {resume})}})
+        db.collection('AboutMe').updateOne({_id: ObjectId(req.body.id)},{$set:{description:req.body.description, public_id: public_id,...(resume && {resume})}})
         .then(data=>res.json(data))
         .catch(error=>res.json(error.message));
     
     }
     else{
-        await db.collection('AboutMe').updateOne({_id: ObjectId(req.body.id)},{$set:{description:req.body.description}})
+        db.collection('AboutMe').updateOne({_id: ObjectId(req.body.id)},{$set:{description:req.body.description}})
         .then(data=>res.json(data))
         .catch(error=>res.json(error.message));
     

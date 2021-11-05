@@ -8,7 +8,7 @@ handler.put(async(req,res)=>{
 
     const {db} = await connectToDatabase();
 
-    await db.collection('Projects').updateOne({_id: ObjectId(req.body.id)},{$push:{projects: req.body.url}})
+    db.collection('Projects').updateOne({_id: ObjectId(req.body.id)},{$push:{projects: req.body.url}})
     .then(data=>res.json(data))
     .catch(error=> res.json(error));
 })
@@ -16,7 +16,7 @@ handler.put(async(req,res)=>{
 handler.post(async(req,res)=>{
     const {db} = await connectToDatabase();
 
-    await db.collection('Projects').insertOne({framework: req.body.framework, projects: [req.body.url]})
+    db.collection('Projects').insertOne({framework: req.body.framework, projects: [req.body.url]})
     .then(data=>res.json(data))
     .catch(error=> res.json(error));
 })
@@ -26,7 +26,7 @@ handler.patch(async(req,res)=>{
 
     const {db} = await connectToDatabase();
 
-    await db.collection('Projects').updateOne({_id: ObjectId(req.body.id)},{$pull:{projects: req.body.url}})
+    db.collection('Projects').updateOne({_id: ObjectId(req.body.id)},{$pull:{projects: req.body.url}})
     .then(data=>res.json(data))
     .catch(error=> res.json(error));
 })
@@ -34,7 +34,7 @@ handler.patch(async(req,res)=>{
 handler.delete(async (req,res)=>{
     const {db} = await connectToDatabase();
     
-    await db.collection('Projects').deleteOne({_id: ObjectId(req.body.id)})
+    db.collection('Projects').deleteOne({_id: ObjectId(req.body.id)})
     .then((resp)=>res.json(resp))
     .catch((err)=>res.json(err.message));
 })

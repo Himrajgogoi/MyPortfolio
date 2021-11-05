@@ -7,7 +7,7 @@ const handler = nextConnect()
 handler.post(async(req,res)=>{
     const {db} = await connectToDatabase();
 
-    await db.collection('Articles').insertOne({article: req.body.article})
+    db.collection('Articles').insertOne({article: req.body.article})
     .then(data=>res.json(data))
     .catch(error=>res.json(error.message))
 })
@@ -15,7 +15,7 @@ handler.post(async(req,res)=>{
 handler.delete(async(req,res)=>{
     const {db} = await connectToDatabase();
 
-    await db.collection('Articles').deleteOne({_id: ObjectId(req.body.id)})
+    db.collection('Articles').deleteOne({_id: ObjectId(req.body.id)})
     .then(resp=>res.json(resp))
     .catch(error=>res.json(error.message));
 })

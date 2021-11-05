@@ -147,7 +147,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
             image: img                       
         }
   
-        await axios.post('/api/language', body)
+        axios.post('/api/language', body)
         .then(res=>window.location.reload())
         .catch(err=>alert(err.message))
       }
@@ -158,7 +158,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
             image: img                       
         }
   
-        await axios.post('/api/framework', body)
+        axios.post('/api/framework', body)
         .then(res=>window.location.reload())
         .catch(err=>alert(err.message))
       }
@@ -170,7 +170,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
             image: img                       
         }
   
-        await axios.post('/api/database', body)
+        axios.post('/api/database', body)
         .then(res=>window.location.reload())
         .catch(err=>alert(err.message))
       }
