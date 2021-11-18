@@ -12,8 +12,8 @@ function projects({isConnected, projects}) {
 
 
     const [flag, setFlag] = useState(null);
-    const [framework, setFramework] = useState(null);
-    const [url, setUrl] = useState(null);
+    const [framework, setFramework] = useState("not provided");
+    const [url, setUrl] = useState("not provided");
     const [id, setId] = useState(null);
     const [ modal, setModal] = useState(false);
 
@@ -57,6 +57,9 @@ function projects({isConnected, projects}) {
                 .then(res=> window.location.reload())
                 .catch(error => alert(error.message));
             }
+        }
+        else{
+            alert('some fields are missing!');
         }
     }
 

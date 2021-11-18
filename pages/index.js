@@ -19,8 +19,8 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
   const [flag, setFlag] = useState(null);
 
   const [image,setImage] = useState(null);
-  const [entity, setEntity] = useState(null);
-  const [experience, setExperience] = useState(null);
+  const [entity, setEntity] = useState("not provided");
+  const [experience, setExperience] = useState("not provided");
   const [id, setId] = useState(null);
   const [public_id, setPublicId] = useState(null);
 
@@ -136,43 +136,45 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
   const postSkill_or_Frmrk_or_db = async () =>{
 
       let img = null;
-      if(image){
+      if(image !== null && entity !== null && experience !== null ){
         img = await getBase64(image);
-      }
-
-      if(flag === 'skill'){
-        const body = {
-            skill: entity,
-            experience: experience,
-            image: img                       
+        if(flag === 'skill'){
+          const body = {
+              skill: entity,
+              experience: experience,
+              image: img                       
+          }
+    
+          axios.post('/api/language', body)
+          .then(res=>window.location.reload())
+          .catch(err=>alert(err.message))
+        }
+        else if(flag === 'framework'){
+          const body = {
+              framework: entity,
+              experience: experience,
+              image: img                       
+          }
+    
+          axios.post('/api/framework', body)
+          .then(res=>window.location.reload())
+          .catch(err=>alert(err.message))
         }
   
-        axios.post('/api/language', body)
-        .then(res=>window.location.reload())
-        .catch(err=>alert(err.message))
-      }
-      else if(flag === 'framework'){
-        const body = {
-            framework: entity,
-            experience: experience,
-            image: img                       
+        else if(flag === 'database'){
+          const body = {
+              technology: entity,
+              experience: experience,
+              image: img                       
+          }
+    
+          axios.post('/api/database', body)
+          .then(res=>window.location.reload())
+          .catch(err=>alert(err.message))
         }
-  
-        axios.post('/api/framework', body)
-        .then(res=>window.location.reload())
-        .catch(err=>alert(err.message))
       }
-
-      else if(flag === 'database'){
-        const body = {
-            technology: entity,
-            experience: experience,
-            image: img                       
-        }
-  
-        axios.post('/api/database', body)
-        .then(res=>window.location.reload())
-        .catch(err=>alert(err.message))
+      else{
+        alert('some fields are missing !')
       }
       
   }
@@ -244,6 +246,9 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
           .catch(error=>alert(error.message));
         }
       }
+      else{
+        alert('enter valid url!');
+      }
   }
 
   /// deleting an article_or_website
@@ -307,7 +312,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
               <form>
                 <div className="form-group">
                   <label for="entity">Entity</label>
-                  <input id="entity" type="text" className="form-control" placeholder={entity} onChange={e=>setEntity(e.target.value)}/>
+                  <input id="entity" type="text" className="form-control" placeholder={entity??" "} onChange={e=>setEntity(e.target.value)}/>
                 </div>
                 <div className="form-group">
                   <label for="experience">Experience</label>

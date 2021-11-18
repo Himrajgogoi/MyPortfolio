@@ -10,7 +10,7 @@ import fire from '../config/fire_config'
 
 function aboutme({isConnected, aboutme}) {
 
-   const [description, setDescription] = useState(null);
+   const [description, setDescription] = useState("not provided");
    const [resume, setResume] = useState(null);
    const [isOpen, setModal] = useState(false);
 
@@ -49,6 +49,9 @@ function aboutme({isConnected, aboutme}) {
            .then(data=> window.location.reload())
            .catch(error=> alert(error.message));
         }
+        else{
+            alert('some fields are missing!');
+        }
    } 
     
    if(isConnected){
@@ -68,7 +71,7 @@ function aboutme({isConnected, aboutme}) {
                         <form>
                            <div className="form-group">
                                <label for="desc">Description</label>
-                               <textarea id="desc" className="form-control" rows="6" placeholder={aboutme.description} onChange={e=>setDescription(e.target.value)}/>
+                               <textarea id="desc" className="form-control" rows="6" placeholder={aboutme.description} onChange={e=>setDescription(e.target.value)} />
                                <label for="resume">Resume</label>
                                <input id="resume" type='file' className="form-control"onChange={e=>setResume(e.target.files[0])}/>
                             </div>
