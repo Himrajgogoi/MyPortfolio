@@ -10,7 +10,7 @@ import fire from '../config/fire_config'
 
 function aboutme({isConnected, aboutme}) {
 
-   const [description, setDescription] = useState("not provided");
+   const [description, setDescription] = useState(null);
    const [resume, setResume] = useState(null);
    const [isOpen, setModal] = useState(false);
 
@@ -35,23 +35,20 @@ function aboutme({isConnected, aboutme}) {
    const update = async () =>{
 
        let url = null;
-       if(description){
-            if(resume){
-                url = await getBase64(resume);
-            }
-           const body = {
-               id: aboutme._id,
-               description: description,
-               resume:url,
-               public_id: aboutme.public_id??null
-           }
-           axios.put('/api/aboutme', body)
-           .then(data=> window.location.reload())
-           .catch(error=> alert(error.message));
+       
+       // modified the code for better logic.
+       if(resume){
+           url = await getBase64(resume);
         }
-        else{
-            alert('some fields are missing!');
+        const body = {
+            id: aboutme._id,
+            description: description??aboutme.description,
+            resume:url,
+            public_id: aboutme.public_id??null
         }
+        axios.put('/api/aboutme', body)
+        .then(data=> window.location.reload())
+        .catch(error=> alert(error.message));
    } 
     
    if(isConnected){
