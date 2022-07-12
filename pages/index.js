@@ -95,7 +95,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
           image: img                           
       }
 
-
+      alert("process?");
       axios.patch('/api/language', body)
       .then(res=>window.location.reload())
       .catch(err=>alert(err.message))
@@ -110,7 +110,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
           image: img                           
       }
 
-
+      alert("process?");
       axios.patch('/api/framework', body)
       .then(res=>window.location.reload())
       .catch(err=>alert(err.message))
@@ -125,7 +125,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
           image: img                           
       }
 
-
+      alert("process?");
       axios.patch('/api/database', body)
       .then(res=>window.location.reload())
       .catch(err=>alert(err.message))
@@ -144,7 +144,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
               experience: experience,
               image: img                       
           }
-    
+          alert("process?");
           axios.post('/api/language', body)
           .then(res=>window.location.reload())
           .catch(err=>alert(err.message))
@@ -155,7 +155,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
               experience: experience,
               image: img                       
           }
-    
+          alert("process?");
           axios.post('/api/framework', body)
           .then(res=>window.location.reload())
           .catch(err=>alert(err.message))
@@ -167,7 +167,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
               experience: experience,
               image: img                       
           }
-    
+          alert("process?");
           axios.post('/api/database', body)
           .then(res=>window.location.reload())
           .catch(err=>alert(err.message))
@@ -188,6 +188,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
     }
 
     if(flag === 'skill'){
+      alert("delete?");
       fetch('/api/language',{
         method: 'DELETE',
         body: JSON.stringify(body),
@@ -199,6 +200,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
       .catch(err=>alert(err.message))
     }
     else if(flag === 'framework'){
+      alert("delete?");
       fetch('/api/framework',{
         method: 'DELETE',
         body: JSON.stringify(body),
@@ -211,6 +213,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
     }
 
     else if(flag === 'database'){
+      alert("delete?");
       fetch('/api/database',{
         method: 'DELETE',
         body: JSON.stringify(body),
@@ -231,7 +234,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
           const body = {
             article: url
           }
-    
+          alert("process?");
           axios.post('/api/articles', body)
           .then(data=>window.location.reload())
           .catch(error=>alert(error.message));
@@ -240,7 +243,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
           const body = {
             url: url
           }
-    
+          alert("process?");
           axios.post('/api/websites', body)
           .then(data=>window.location.reload())
           .catch(error=>alert(error.message));
@@ -258,7 +261,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
         const body = {
           id: articles[index]._id
         }
-
+        alert("delete?");
         fetch('/api/articles',{
           method: 'DELETE',
           body: JSON.stringify(body),
@@ -274,7 +277,7 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
         const body = {
           id: websites[index]._id
         }
-
+        alert("delete?");
         fetch('/api/websites',{
           method: 'DELETE',
           body: JSON.stringify(body),

@@ -41,7 +41,7 @@ function projects({isConnected, projects}) {
                     framework: framework,
                     url: url
                 }
-
+                alert("process?");
                 axios.post('/api/projects', body)
                 .then(res=> window.location.reload())
                 .catch(error => alert(error.message));
@@ -52,7 +52,7 @@ function projects({isConnected, projects}) {
                     id: id,
                     url: url
                 }
-
+                alert("process?");
                 axios.put('/api/projects', body)
                 .then(res=> window.location.reload())
                 .catch(error => alert(error.message));
@@ -69,7 +69,7 @@ function projects({isConnected, projects}) {
             id: id,
             url: url
         }
-
+        alert("delete?");
         axios.patch('/api/projects', body)
         .then(res=> window.location.reload())
         .catch(error => alert(error.message));
@@ -80,7 +80,7 @@ function projects({isConnected, projects}) {
         const body = {
             id: id
         }
-
+        alert("delete?");
         fetch('/api/projects',{
             method: 'DELETE',
             body: JSON.stringify(body),
