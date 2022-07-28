@@ -21,24 +21,24 @@ function contactme({resume}) {
                    </div>
                    <div className="row">
                        <div className="col-4 col-lg-2">
-                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="mailto:galacticmacawesomeville@gmail.com">Gmail</a></p>
+                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="mailto:galacticmacawesomeville@gmail.com" target="__blank">Gmail</a></p>
                        </div>
                        <div className="col-4 col-lg-2">
-                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://www.linkedin.com/in/himraj-gogoi">LinkedIn</a></p>
+                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://www.linkedin.com/in/himraj-gogoi" target="__blank">LinkedIn</a></p>
                        </div>
                        <div className="col-4 col-lg-2">
-                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://github.com/Himrajgogoi">GitHub</a></p>
+                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://github.com/Himrajgogoi" target="__blank">GitHub</a></p>
                        </div>
                        <div className="col-4 col-lg-2">
-                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://www.instagram.com/himraj_gogoi_/">Instagram</a></p>
+                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://www.instagram.com/himraj_gogoi_/" target="__blank">Instagram</a></p>
                        </div>
                        <div className="col-4 col-lg-2">
-                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://himrajgogoi.medium.com/">Medium</a></p>
+                           <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href="https://himrajgogoi.medium.com/" target="__blank">Medium</a></p>
                        </div>
                    </div>
                    <div className="row">
                        <div className="col-12 col-md-4">
-                       <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href={resume}><i className="fa fa-download fa-lg"></i> My Resume</a></p>
+                       <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href={resume} target="__blank"><i className="fa fa-download fa-lg"></i> My Resume</a></p>
                        </div>
                    </div>
                 </div>

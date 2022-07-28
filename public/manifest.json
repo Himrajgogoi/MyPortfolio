@@ -44,8 +44,8 @@
             "purpose": "any maskable"
         }
     ],
-    "theme_color": "#cb22e0",
-    "background_color": "#cb22e0",
+    "theme_color": "#282828",
+    "background_color": "#282828",
     "display": "standalone",
     "scope": "/",
     "start_url": "/"

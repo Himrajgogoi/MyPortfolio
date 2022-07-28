@@ -1,4 +1,6 @@
 import React from 'react'
+import NextLink from "next/link";
+
 import styles from "../styles/Footer.module.css";
 
 
@@ -8,22 +10,34 @@ function Footer() {
             <div className={`container ${styles.footer_content}`}>
                 <ul>
                     <li>
-                       <a href="/"  style={{textDecoration:'none', color:'white'}}> <span>Home</span></a>
+                       <NextLink href="/" >
+                        <span  style={{ color:'white'}}>Home</span>
+                        </NextLink>
                     </li>
                     <li className={styles.item}>
-                       <a href="/aboutme" style={{textDecoration:'none', color:'white'}}> <span>About me</span></a>
+                       <NextLink href="/aboutme"> 
+                       <span  style={{ color:'white'}}>About me</span>
+                       </NextLink>
                     </li>
                     <li className={styles.item}>
-                       <a href="/projects" style={{textDecoration:'none', color:'white'}}> <span>Projects</span></a>
+                       <NextLink href="/projects"> 
+                       <span  style={{ color:'white'}}>Projects</span>
+                       </NextLink>
                     </li>
                     <li className={styles.item}>
-                       <a href="/#websites" style={{textDecoration:'none', color:'white'}}> <span>Websites</span></a>
+                       <NextLink href="/#websites" > 
+                       <span style={{ color:'white'}}>Websites</span>
+                       </NextLink>
                     </li>
                     <li className={styles.item}>
-                       <a href="/#articles" style={{textDecoration:'none', color:'white'}}> <span>Articles</span></a>
+                       <NextLink href="/#articles" > 
+                       <span style={{ color:'white'}}>Articles</span>
+                       </NextLink>
                     </li>
                     <li className={styles.item}>
-                       <a href="/contactme" style={{textDecoration:'none', color:'white'}}> <span>Contact me</span></a>
+                       <NextLink href="/contactme" > 
+                       <span style={{color:'white'}}>Contact me</span>
+                       </NextLink>
                     </li>
                 </ul>
                 <div>

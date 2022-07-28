@@ -1,52 +1,46 @@
 import React, { useState } from "react";
-import {useRouter} from "next/router";
-import {
-  NavbarToggler,
-  Collapse,
-  Modal,
-  ModalBody,
-} from "reactstrap";
+import { useRouter } from "next/router";
+import { NavbarToggler, Collapse, Modal, ModalBody } from "reactstrap";
+import NextLink from "next/link";
 import styles from "../styles/Header.module.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import fire from "../config/fire_config";
 
-
 function Header() {
-
-
   const router = useRouter();
   const [isOpen, setisOpen] = useState(false);
 
   const [modal, setModal] = useState(false);
-  const [error, setError] = useState(' ');
-
+  const [error, setError] = useState(" ");
 
   ///user signIn
-  const[email, setEmail] = useState('');
-  const[password, setPassword] = useState('');
-   
-  const handleLogin = e =>{
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    fire.auth().signInWithEmailAndPassword(email,password)
-    .catch((err)=>{
-      alert(err.message);
-      setError(err.message)
-    })
+    fire
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch((err) => {
+        alert(err.message);
+        setError(err.message);
+      });
 
-    setEmail('');
-    setPassword('');
+    setEmail("");
+    setPassword("");
     setModal(!modal);
-  
-  }
+  };
 
-  const handleLogout = () =>{
-    fire.auth().signOut()
-    .then(()=>{
-      router.reload()
-    })
-  }
-
+  const handleLogout = () => {
+    fire
+      .auth()
+      .signOut()
+      .then(() => {
+        router.reload();
+      });
+  };
 
   return (
     <div className={styles.header_content}>
@@ -54,44 +48,73 @@ function Header() {
         <span
           className="navbar-brand"
           href="#"
-          style={{marginRight: "40vw" }}
-        >
-        </span>
+          style={{ marginRight: "40vw" }}
+        ></span>
         <NavbarToggler onClick={() => setisOpen(!isOpen)}>
           <span className="navbar-toggler-icon"></span>
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <ul className="navbar-nav">
             <li>
-              <a href="/" className={styles.hover_underline_animation} style={{textDecoration:'none'}}> <span>Home</span></a>
+              <NextLink href="/">
+                <span className={styles.hover_underline_animation}>Home</span>
+              </NextLink>
             </li>
             <li>
-              <a href="/aboutme" className={styles.hover_underline_animation} style={{textDecoration:'none'}}> <span>About me</span></a>
+              <NextLink href="/aboutme">
+                <span className={styles.hover_underline_animation}>
+                  About me
+                </span>
+              </NextLink>
             </li>
             <li>
-              <a href="/projects" className={styles.hover_underline_animation} style={{textDecoration:'none'}}> <span>Projects</span></a>
+              <NextLink href="/projects">
+                <span className={styles.hover_underline_animation}>
+                  Projects
+                </span>
+              </NextLink>
             </li>
             <li>
-              <a href="/#websites" className={styles.hover_underline_animation} style={{textDecoration:'none'}}> <span>Websites</span></a>
+              <NextLink href="/#websites">
+                <span className={styles.hover_underline_animation}>
+                  Websites
+                </span>
+              </NextLink>
             </li>
             <li>
-              <a href="/#articles" className={styles.hover_underline_animation} style={{textDecoration:'none'}}> <span>Articles</span></a>
+              <NextLink href="/#articles">
+                <span className={styles.hover_underline_animation}>
+                  Articles
+                </span>
+              </NextLink>
             </li>
             <li>
-              <a href="/contactme" className={styles.hover_underline_animation} style={{textDecoration:'none'}}> <span>Contact me</span></a>
+              <NextLink href="/contactme">
+                <span className={styles.hover_underline_animation}>
+                  Contact me
+                </span>
+              </NextLink>
             </li>
             <li onClick={() => setModal(!modal)}>
-              <span  className={styles.hover_underline_animation}>Sign In</span>
+              <span className={styles.hover_underline_animation}>Sign In</span>
             </li>
             <li onClick={() => setModal(!modal)}>
-              <span  className={styles.hover_underline_animation} onClick={()=>handleLogout()}>Sign Out</span>
+              <span
+                className={styles.hover_underline_animation}
+                onClick={() => handleLogout()}
+              >
+                Sign Out
+              </span>
             </li>
           </ul>
         </Collapse>
       </nav>
       <Modal isOpen={modal}>
         <ModalBody>
-          <span className="fa fa-close fa-lg" onClick={() => setModal(!modal)}></span>
+          <span
+            className="fa fa-close fa-lg"
+            onClick={() => setModal(!modal)}
+          ></span>
           <form onSubmit={handleLogin}>
             <div class="form-group">
               <label for="username">Email</label>

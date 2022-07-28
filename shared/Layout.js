@@ -2,8 +2,86 @@ import Head from "next/head";
 import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
+import Particles from "react-tsparticles";
+import {loadFull} from "tsparticles"
 
 const Layout = ({ children }) => {
+  
+  // for particles animation
+  const options = {
+    background: {
+      color: {
+        value: "#282828",
+      },
+    },
+    fpsLimit: 30,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "repulse",
+        },
+        resize: true,
+      },
+      modes: {
+        push: {
+          quantity: 4,
+        },
+        repulse: {
+          distance: 100,
+          duration: 0.4,
+        },
+      },
+    },
+    particles: {
+      color: {
+        value: "#ffffff",
+      },
+      links: {
+        color: "#ffffff",
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1,
+      },
+      collisions: {
+        enable: true,
+      },
+      move: {
+        direction: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
+        },
+        random: false,
+        speed: 6,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 800,
+        },
+        value: 80,
+      },
+      opacity: {
+        value: 0.5,
+      },
+      shape: {
+        type: "square",
+      },
+      size: {
+        value: { min: 1, max: 5 },
+      },
+    },
+    detectRetina: true,
+  };
+  
+  // initializing the particles animation
+  const particlesInit = async (main) => {
+
+    await loadFull(main);
+  };
   return (
     <div>
       <Head>
@@ -27,10 +105,16 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Head>
-      <video autoPlay playsInline muted>
+      {/* <video autoPlay playsInline muted>
         <source src="Portfolio.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+       <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={options}
+      />
       {children}
+      
       <Footer />
       <style jsx global>{`
         video {
