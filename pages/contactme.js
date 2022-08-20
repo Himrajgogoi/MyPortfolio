@@ -38,7 +38,7 @@ function contactme({resume}) {
                    </div>
                    <div className="row">
                        <div className="col-12 col-md-4">
-                       <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href={resume} target="__blank" download="true"><i className="fa fa-download fa-lg"></i> My Resume</a></p>
+                       <p className={styles.links}><a style={{textDecoration:'none', color:'white'}} href={resume} target="__blank" download="HimrajGogoi_2022"><i className="fa fa-download fa-lg"></i> My Resume</a></p>
                        </div>
                    </div>
                 </div>
