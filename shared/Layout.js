@@ -50,19 +50,16 @@ const Layout = ({ children }) => {
       move: {
         direction: "none",
         enable: true,
-        outModes: {
-          default: "bounce",
-        },
         random: false,
-        speed: 6,
+        speed: 4,
         straight: false,
       },
       number: {
         density: {
-          enable: true,
+          enable: false,
           area: 800,
         },
-        value: 80,
+        value: 85,
       },
       opacity: {
         value: 0.5,
