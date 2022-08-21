@@ -10,7 +10,7 @@ handler.put(async(req, res) => {
 
     if (req.body.resume) {
 
-        const resm = await cloudinary.uploader.upload(req.body.resume, { folder: 'Portfolio' });
+        const resm = await cloudinary.uploader.upload(req.body.resume, { folder: 'Portfolio', public_id:"Himraj_Gogoi_Resume"});
         const resume = resm.secure_url;
         const public_id = resm.public_id;
 

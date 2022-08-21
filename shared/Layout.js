@@ -4,8 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import Particles from "react-tsparticles";
 import {loadFull} from "tsparticles"
+import { useEffect, useState } from "react";
 
 const Layout = ({ children }) => {
+  
+
+  
   
   // for particles animation
   const options = {
@@ -18,7 +22,7 @@ const Layout = ({ children }) => {
     interactivity: {
       events: {
         onHover: {
-          enable: true,
+          enable: false,
           mode: "repulse",
         },
         resize: true,
@@ -39,27 +43,29 @@ const Layout = ({ children }) => {
       },
       links: {
         color: "#ffffff",
-        distance: 150,
+        distance: 120,
         enable: true,
         opacity: 0.5,
         width: 1,
       },
       collisions: {
-        enable: true,
+        enable: false,
       },
       move: {
         direction: "none",
         enable: true,
         random: false,
-        speed: 4,
+        speed: 3,
         straight: false,
+        out_mode: "out",
+        bounce: false,
       },
       number: {
         density: {
           enable: false,
           area: 800,
         },
-        value: 85,
+        value:50,
       },
       opacity: {
         value: 0.5,
@@ -68,6 +74,7 @@ const Layout = ({ children }) => {
         type: "square",
       },
       size: {
+        random: true,
         value: { min: 1, max: 5 },
       },
     },
