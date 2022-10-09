@@ -61,14 +61,14 @@ function Header() {
               </NextLink>
             </li>
             <li>
-              <NextLink href="/aboutme">
+              <NextLink href="/Aboutme">
                 <span className={styles.hover_underline_animation}>
                   About me
                 </span>
               </NextLink>
             </li>
             <li>
-              <NextLink href="/projects">
+              <NextLink href="/Projects">
                 <span className={styles.hover_underline_animation}>
                   Projects
                 </span>
@@ -89,7 +89,7 @@ function Header() {
               </NextLink>
             </li>
             <li>
-              <NextLink href="/contactme">
+              <NextLink href="/Contactme">
                 <span className={styles.hover_underline_animation}>
                   Contact me
                 </span>

@@ -15,12 +15,12 @@ function Footer() {
                         </NextLink>
                     </li>
                     <li>
-                       <NextLink href="/aboutme"> 
+                       <NextLink href="/Aboutme"> 
                        <span  className={styles.footer_link}>About me</span>
                        </NextLink>
                     </li>
                     <li>
-                       <NextLink href="/projects"> 
+                       <NextLink href="/Projects"> 
                        <span  className={styles.footer_link}>Projects</span>
                        </NextLink>
                     </li>
@@ -35,7 +35,7 @@ function Footer() {
                        </NextLink>
                     </li>
                     <li >
-                       <NextLink href="/contactme" > 
+                       <NextLink href="/Contactme" > 
                        <span className={styles.footer_link}>Contact me</span>
                        </NextLink>
                     </li>
