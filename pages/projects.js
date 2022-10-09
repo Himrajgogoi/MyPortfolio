@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Head from "next/head";
 import { connectToDatabase } from '../lib/mongodb'
 import Header from '../shared/Header'
-import styles from "../styles/Projects.module.css"
+import styles from "../styles/projects.module.css"
 import {CardHeader, CardBody, Collapse, Card, ModalBody, Modal} from 'reactstrap';
 import axios from 'axios';
 import fire from '../config/fire_config';

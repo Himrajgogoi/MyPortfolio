@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { connectToDatabase } from "../lib/mongodb";
 import Header from "../shared/Header";
-import styles from "../styles/Aboutme.module.css";
+import styles from "../styles/aboutme.module.css";
 import { Modal, ModalBody } from "reactstrap";
 import axios from "axios";
 import fire from "../config/fire_config";

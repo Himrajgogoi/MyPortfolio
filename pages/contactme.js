@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from '../shared/Header'
-import styles from "../styles/Contactme.module.css";
+import styles from "../styles/contactme.module.css";
 import { connectToDatabase } from '../lib/mongodb'
 
 function Contactme({resume}) {
