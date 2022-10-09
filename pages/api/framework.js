@@ -21,11 +21,11 @@ handler.patch(async(req, res) => {
         }
         db.collection('Frameworks').updateOne({ _id: ObjectId(req.body.id) }, { $set: { framework: req.body.framework, experience: req.body.experience, public_id: public_id, ...(image && { image }) } })
             .then(data => res.json(data))
-            .catch(error => res.json(error));
+            .catch(error => res.status(500).json({message: "an error occured"}));
     } else {
         db.collection('Frameworks').updateOne({ _id: ObjectId(req.body.id) }, { $set: { framework: req.body.framework, experience: req.body.experience } })
             .then(data => res.json(data))
-            .catch(error => res.json(error.message));
+            .catch(error => res.status(500).json({message: "an error occured"}));
     }
 })
 
@@ -39,11 +39,11 @@ handler.post(async(req, res) => {
 
         db.collection('Frameworks').insertOne({ framework: req.body.framework, experience: req.body.experience, image: image, public_id: public_id })
             .then(data => res.json(data))
-            .catch(error => res.json(error.message));
+            .catch(error => res.status(500).json({message: "an error occured"}));
     } else {
         db.collection('Frameworks').insertOne({ framework: req.body.framework, experience: req.body.experience, public_id: null })
             .then(data => res.json(data))
-            .catch(error => res.json(error.message));
+            .catch(error => res.status(500).json({message: "an error occured"}));
     }
 
 })

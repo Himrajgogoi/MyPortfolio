@@ -10,7 +10,7 @@ handler.put(async(req, res) => {
 
     db.collection('Projects').updateOne({ _id: ObjectId(req.body.id) }, { $push: { projects: req.body.url } })
         .then(data => res.json(data))
-        .catch(error => res.json(error));
+        .catch(error => res.status(500).json({message: "an error occured"}));
 })
 
 handler.post(async(req, res) => {
@@ -18,7 +18,7 @@ handler.post(async(req, res) => {
 
     db.collection('Projects').insertOne({ framework: req.body.framework, projects: [req.body.url] })
         .then(data => res.json(data))
-        .catch(error => res.json(error));
+        .catch(error => res.status(500).json({message: "an error occured"}));
 })
 
 
@@ -28,7 +28,7 @@ handler.patch(async(req, res) => {
 
     db.collection('Projects').updateOne({ _id: ObjectId(req.body.id) }, { $pull: { projects: req.body.url } })
         .then(data => res.json(data))
-        .catch(error => res.json(error));
+        .catch(error => res.status(500).json({message: "an error occured"}));
 })
 
 handler.delete(async(req, res) => {

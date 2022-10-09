@@ -2,13 +2,13 @@ import React,{useState} from 'react'
 import Head from "next/head";
 import { connectToDatabase } from '../lib/mongodb'
 import Header from '../shared/Header'
-import styles from "../styles/projects.module.css"
+import styles from "../styles/Projects.module.css"
 import {CardHeader, CardBody, Collapse, Card, ModalBody, Modal} from 'reactstrap';
 import axios from 'axios';
 import fire from '../config/fire_config';
 
 
-function projects({isConnected, projects}) {
+function Projects({isConnected, projects}) {
 
 
     const [flag, setFlag] = useState(null);
@@ -165,7 +165,7 @@ function projects({isConnected, projects}) {
     }
 }
 
-export default projects
+export default Projects
 
 export async function getServerSideProps(context){
     const {client,db} = await connectToDatabase()

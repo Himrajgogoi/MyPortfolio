@@ -5,6 +5,7 @@
     display: inline-block;
     position: relative;
     color: white;
+    cursor: pointer;
 }
   
 .hover_underline_animation:after{
@@ -18,12 +19,14 @@
     background-color: white;
     transform-origin: bottom center;
     transition: transform 0.25s ease-out;
+
 }
   
 .hover_underline_animation:hover:after{
     color: white;
     transform: scaleX(1);
     transform-origin: bottom center;
+
     
 }
 

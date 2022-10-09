@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { connectToDatabase } from "../lib/mongodb";
 import Header from "../shared/Header";
-import styles from "../styles/aboutme.module.css";
+import styles from "../styles/Aboutme.module.css";
 import { Modal, ModalBody } from "reactstrap";
 import axios from "axios";
 import fire from "../config/fire_config";
 
-function aboutme({ isConnected, aboutme }) {
+function Aboutme({ isConnected, aboutme }) {
   const [description, setDescription] = useState(null);
   const [resume, setResume] = useState(null);
   const [isOpen, setModal] = useState(false);
@@ -144,7 +144,7 @@ function aboutme({ isConnected, aboutme }) {
   }
 }
 
-export default aboutme;
+export default Aboutme;
 
 export async function getServerSideProps(context) {
   const { client, db } = await connectToDatabase();

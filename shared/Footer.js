@@ -11,32 +11,32 @@ function Footer() {
                 <ul>
                     <li>
                        <NextLink href="/" >
-                        <span  style={{ color:'white'}}>Home</span>
+                        <span  className={styles.footer_link}>Home</span>
                         </NextLink>
                     </li>
-                    <li className={styles.item}>
+                    <li>
                        <NextLink href="/aboutme"> 
-                       <span  style={{ color:'white'}}>About me</span>
+                       <span  className={styles.footer_link}>About me</span>
                        </NextLink>
                     </li>
-                    <li className={styles.item}>
+                    <li>
                        <NextLink href="/projects"> 
-                       <span  style={{ color:'white'}}>Projects</span>
+                       <span  className={styles.footer_link}>Projects</span>
                        </NextLink>
                     </li>
-                    <li className={styles.item}>
+                    <li >
                        <NextLink href="/#websites" > 
-                       <span style={{ color:'white'}}>Websites</span>
+                       <span className={styles.footer_link}>Websites</span>
                        </NextLink>
                     </li>
-                    <li className={styles.item}>
+                    <li >
                        <NextLink href="/#articles" > 
-                       <span style={{ color:'white'}}>Articles</span>
+                       <span className={styles.footer_link}>Articles</span>
                        </NextLink>
                     </li>
-                    <li className={styles.item}>
+                    <li >
                        <NextLink href="/contactme" > 
-                       <span style={{color:'white'}}>Contact me</span>
+                       <span className={styles.footer_link}>Contact me</span>
                        </NextLink>
                     </li>
                 </ul>

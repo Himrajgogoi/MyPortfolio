@@ -1,10 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from '../shared/Header'
-import styles from "../styles/contactme.module.css";
+import styles from "../styles/Contactme.module.css";
 import { connectToDatabase } from '../lib/mongodb'
 
-function contactme({resume}) {
+function Contactme({resume}) {
     return (
         <div>
             <Head>
@@ -47,7 +47,7 @@ function contactme({resume}) {
     )
 }
 
-export default contactme
+export default Contactme
 
 
 export async function getServerSideProps(context){
