@@ -47,15 +47,15 @@ function Footer() {
                     <p>+91 7635823494</p>
                     <b>Reach me at:</b>
                     <br></br>
-                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="mailto:galacticmacawesomeville@gmail.com"><i className="fa fa-envelope fa-lg"></i></a>
-                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://www.linkedin.com/in/himraj-gogoi"><i className="fa fa-linkedin fa-lg"></i></a>
-                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://github.com/Himrajgogoi"><i className="fa fa-github fa-lg"></i></a>
-                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://www.instagram.com/himraj_gogoi_/"><i className="fa fa-instagram fa-lg"></i></a>
-                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://himrajgogoi.medium.com/"><i className="fa fa-medium fa-lg"></i></a>
+                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="mailto:galacticmacawesomeville@gmail.com"  target="_blank"><i className="fa fa-envelope fa-lg"></i></a>
+                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://www.linkedin.com/in/himraj-gogoi" target="_blank"><i className="fa fa-linkedin fa-lg"></i></a>
+                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://github.com/Himrajgogoi" target="_blank"><i className="fa fa-github fa-lg"></i></a>
+                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://www.instagram.com/himraj_gogoi_/" target="_blank"><i className="fa fa-instagram fa-lg"></i></a>
+                    <a style={{textDecoration:'none', color:'white', marginRight:'2vw'}} href="https://himrajgogoi.medium.com/" target="_blank"><i className="fa fa-medium fa-lg"></i></a>
                 </div>
             </div>
             <div className={styles.copyright}>
-                <b>copyright@HimrajGogoi2021</b>
+                <b>{'Copyright © '}HimrajGogoi {new Date().getFullYear()}{'.'}</b>
             </div>
         </div>
     )

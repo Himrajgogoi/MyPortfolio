@@ -150,8 +150,12 @@ export async function getServerSideProps(context) {
   const { client, db } = await connectToDatabase();
 
   const isConnected = await client.isConnected();
-  const aboutme = await db.collection("AboutMe").find({}).toArray();
-  const about = JSON.parse(JSON.stringify(aboutme))[0];
+  let about;
+  if(isConnected){
+    const aboutme = await db.collection("AboutMe").find({}).toArray();
+    about = JSON.parse(JSON.stringify(aboutme))[0];
+  }
+ 
 
   return {
     props: {

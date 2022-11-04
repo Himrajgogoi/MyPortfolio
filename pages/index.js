@@ -6,6 +6,7 @@ import Header from '../shared/Header';
 import fire from '../config/fire_config';
 import axios from 'axios';
 import { Modal, ModalBody } from 'reactstrap';
+import Loader from '../shared/Loader';
 
 
 export default function Home({ isConnected, skills, frameworks, databases, articles, websites }) {
@@ -430,15 +431,15 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
                 <h2>Some of my articles.</h2>
               {loggedIn? <span className="fa fa-plus fa-lg" onClick={()=>{setFlag('article'); setModal(!isOpen)}} style={{color:'white'}}></span>:<div></div>}
           </div>
-           <div className={`container ${styles.scrolled_content}`}>
-             
-              {links===[]?(<div></div>):links.map((link,index)=>(
+          {links.length === 0 && <div  className={`container ${styles.titles}`}> <Loader/></div>}         
+           <div className={`container ${styles.scrolled_content}`}>  
+              {links.length !==0 && links.map((link,index)=>(
                 <div className={`card ${styles.scrolled_content_item}`} key={index}>
                   <div className="card-img">
                     <img src={link.ogImage.url} className="img-fluid"/>
                   </div>
                   <div className="card-body">
-                   <a href={link.ogUrl} style={{textDecoration: 'none'}}>{link.ogTitle}</a>
+                   <a href={link.ogUrl} style={{textDecoration: 'none'}} target="_blank">{link.ogTitle}</a>
                    <br></br><br></br>
                    <small>Published at: {link.ogSiteName}</small>
                    {loggedIn? <span className="fa fa-trash fa-lg" onClick={()=>{setFlag('article'); deleteArticle_or_website(index)}}></span>:<div></div>}
@@ -450,14 +451,15 @@ export default function Home({ isConnected, skills, frameworks, databases, artic
               <h2>My live websites.</h2>
               {loggedIn? <span className="fa fa-plus fa-lg" onClick={()=>{setFlag('website'); setModal(!isOpen)}} style={{color:'white'}}></span>:<div></div>}
           </div>
+            {webs.length === 0 && <div  className={`container ${styles.titles}`}> <Loader/></div>}
            <div className={`container ${styles.scrolled_content}`}>
-              {webs===[]?(<div></div>):webs.map((link, index)=>(
+              {webs.length !==0 && webs.map((link, index)=>(
                 <div className={`card ${styles.scrolled_content_item}`} key={index}>
                   <div className="card-img">
                     <img src='/background.jpeg' className="img-fluid"/>
                   </div>
                   <div className="card-body">
-                   <a href={link.requestUrl} style={{textDecoration: 'none'}}>{link.ogTitle}</a>
+                   <a href={link.requestUrl} style={{textDecoration: 'none'}} target="_blank">{link.ogTitle}</a>
                    <br></br>
                   {loggedIn?  <span className="fa fa-trash fa-lg" onClick={()=>{setFlag('website'); deleteArticle_or_website(index)}}></span>:<div></div>}
                   </div>
@@ -489,18 +491,21 @@ export async function getServerSideProps(context) {
   const { client,db } = await connectToDatabase()
 
   const isConnected = await client.isConnected()
-  const skills =await db.collection('Skills').find({}).toArray();
-  const frameworks =await db.collection('Frameworks').find({}).toArray();
-  const databases =await db.collection('Database_technologies').find({}).toArray();
-  const articles =await db.collection('Articles').find({}).toArray();
-  const websites =await db.collection('Websites_and_Apps').find({}).toArray();
-
-
-  const skillset = JSON.parse(JSON.stringify(skills));
-  const frameworkset = JSON.parse(JSON.stringify(frameworks));
-  const databaseset = JSON.parse(JSON.stringify(databases));
-  const articleset = JSON.parse(JSON.stringify(articles));
-  const websiteset = JSON.parse(JSON.stringify(websites));
+  let skillset,frameworkset,databaseset,articleset,websiteset;
+  if(isConnected){
+    const skills =await db.collection('Skills').find({}).toArray();
+    const frameworks =await db.collection('Frameworks').find({}).toArray();
+    const databases =await db.collection('Database_technologies').find({}).toArray();
+    const articles =await db.collection('Articles').find({}).toArray();
+    const websites =await db.collection('Websites_and_Apps').find({}).toArray();
+  
+  
+    skillset = JSON.parse(JSON.stringify(skills));
+    frameworkset = JSON.parse(JSON.stringify(frameworks));
+    databaseset = JSON.parse(JSON.stringify(databases));
+    articleset = JSON.parse(JSON.stringify(articles));
+    websiteset = JSON.parse(JSON.stringify(websites));
+  }
 
   return {
     props: {

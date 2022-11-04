@@ -137,7 +137,7 @@ function Projects({isConnected, projects}) {
                                         {loggedIn? <span className="fa fa-trash fa-lg" onClick={()=>{deleteFramework(item._id)}}></span>:<div></div>}
                                         </div>
                                         </div></CardHeader>
-                                    <Collapse isOpen={isOpen}><CardBody>{item.projects.map((project, index)=>(<div key={index}><a href={project}>{project}</a>
+                                    <Collapse isOpen={isOpen}><CardBody>{item.projects.map((project, index)=>(<div key={index}><a href={project} target="_blank">{project}</a>
                                         {loggedIn? <span className="fa fa-trash fa-lg" onClick={()=>{deleteProject(item._id, project)}}></span>:<div></div>}</div>))}</CardBody></Collapse>
                                 </Card>
                             )
@@ -171,9 +171,15 @@ export async function getServerSideProps(context){
     const {client,db} = await connectToDatabase()
 
     const isConnected = await client.isConnected()
-    const projects = await db.collection('Projects').find({}).toArray()
-    const projects_set = JSON.parse(JSON.stringify(projects));
 
+    let projects_set;
+
+    if(isConnected){
+
+        const projects = await db.collection('Projects').find({}).toArray()
+        projects_set = JSON.parse(JSON.stringify(projects));
+
+    }
     return{
         props:{
             isConnected: isConnected,
