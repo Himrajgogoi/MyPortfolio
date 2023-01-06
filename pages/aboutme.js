@@ -94,7 +94,7 @@ function Aboutme({ isConnected, aboutme }) {
             </ModalBody>
           </Modal>
           <div className={`container ${styles.contents}`}>
-            <img src="/my_dp.jpg" className={`img-fluid ${styles.my_dp}`}></img>
+            <img src="/HimrajGogoi.jpg" className={`img-fluid ${styles.my_dp}`}></img>
             <h2 className="animate fadeInLeft left">About Me.</h2>
             <div className="row">
               <div className="col-12 col-md-4">

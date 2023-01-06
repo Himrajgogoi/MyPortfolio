@@ -30,6 +30,20 @@
     transition: 300ms ease-in-out;
 }
 
+.webscrapper_card_item{
+    text-align: center;
+    min-width: 30vw;
+    min-height: 18vh;
+    margin: 2vh 2vw;
+    padding: 2vh 2vw;
+    flex: 1 0 33%;
+}
+
+.webscrapper_card_item:hover{
+    transform: scale(1.06);
+    transition: 300ms ease-in-out;
+}
+
 .cards{
     min-width: 30vw;
     min-height: 18vh;
@@ -53,6 +67,10 @@
     opacity: 0.8;
 }
 
+/*for the card images in websites and articles */
+.card_img{
+   box-shadow:  6px 6px 5px lightblue;
+}
 
 .titles{
     position: relative;
@@ -82,7 +100,7 @@
     }
     
 
-    .scrolled_content_item{
+    .scrolled_content_item,.webscrapper_card_item{
         text-align: center;
         min-width: 6vw;
         min-height: 28vh;
@@ -90,6 +108,7 @@
         margin: 2vh 1vw;
         flex: 1 0 25%;
     }
+
     .titles{
         position: relative;
         margin-top: 45vh;
